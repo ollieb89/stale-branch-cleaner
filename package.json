@@ -1,0 +1,10 @@
+{
+  "name": "stale-branch-cleaner",
+  "version": "1.0.0",
+  "description": "GitHub Action that detects stale branches and creates cleanup reports or auto-deletes them",
+  "main": "dist/index.js",
+  "scripts": {"build": "ncc build src/index.ts --out dist"},
+  "dependencies": {"@actions/core": "^1.10.1", "@actions/github": "^6.0.0"},
+  "devDependencies": {"@vercel/ncc": "^0.38.1", "typescript": "^5.3.3", "@types/node": "^20.10.0"},
+  "license": "MIT"
+}

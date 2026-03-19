@@ -1,0 +1,30 @@
+name: 'Stale Branch Cleaner'
+description: 'Detect and clean up stale branches — keep your repo tidy automatically'
+author: 'ollieb89'
+branding:
+  icon: 'scissors'
+  color: 'orange'
+inputs:
+  github-token:
+    description: 'GitHub token'
+    default: '${{ github.token }}'
+  stale-days:
+    description: 'Days since last commit to consider branch stale'
+    default: '90'
+  exclude-patterns:
+    description: 'Branch patterns to never delete (one per line)'
+    default: |
+      main
+      master
+      develop
+      release/*
+      hotfix/*
+  dry-run:
+    description: 'Report only, do not delete'
+    default: 'true'
+  create-issue:
+    description: 'Create GitHub issue with stale branch report'
+    default: 'true'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
